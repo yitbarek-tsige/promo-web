@@ -1,0 +1,1282 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posture Pro - Premium Posture Correctors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1e3a5f;
+            --primary-light: #2c5282;
+            --accent: #3182ce;
+            --accent-light: #63b3ed;
+            --neutral-100: #f7fafc;
+            --neutral-200: #edf2f7;
+            --neutral-300: #e2e8f0;
+            --neutral-400: #cbd5e0;
+            --neutral-500: #a0aec0;
+            --neutral-600: #718096;
+            --neutral-700: #4a5568;
+            --neutral-800: #2d3748;
+            --neutral-900: #1a202c;
+            --success: #38a169;
+            --warning: #d69e2e;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--neutral-800);
+            line-height: 1.6;
+            background: var(--neutral-100);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--neutral-200);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--neutral-700);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content .amharic {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero-content p {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero-content .amharic-text {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(49, 130, 206, 0.3);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title .amharic {
+            color: var(--neutral-600);
+            font-size: 1.25rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--neutral-100);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .feature-card .amharic {
+            font-size: 0.9rem;
+            color: var(--neutral-600);
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: var(--neutral-600);
+            font-size: 0.95rem;
+        }
+
+        /* Product Gallery */
+        .gallery {
+            padding: 5rem 2rem;
+            background: var(--neutral-100);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(30, 58, 95, 0.9));
+            color: var(--white);
+            padding: 2rem 1.5rem 1.5rem;
+        }
+
+        .gallery-overlay h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .gallery-overlay .amharic {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--neutral-100);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            border: 2px solid var(--neutral-200);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-card.popular {
+            border-color: var(--accent);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card .amharic {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card.popular .price {
+            color: var(--white);
+        }
+
+        .price-detail {
+            color: var(--neutral-600);
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-card.popular .price-detail {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .price-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .price-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--neutral-200);
+        }
+
+        .pricing-card.popular .price-features li {
+            border-bottom-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .price-features li:last-child {
+            border-bottom: none;
+        }
+
+        .order-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .order-btn:hover {
+            background: var(--primary);
+        }
+
+        .pricing-card.popular .order-btn {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .pricing-card.popular .order-btn:hover {
+            background: var(--neutral-100);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: var(--neutral-100);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        .testimonial-info h4 {
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .testimonial-info .stars {
+            color: var(--warning);
+        }
+
+        .testimonial-text {
+            color: var(--neutral-600);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial-text .amharic {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--neutral-500);
+        }
+
+        /* Order Form / Dashboard */
+        .order-section {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .order-form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--neutral-100);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .form-group .amharic-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--neutral-600);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--neutral-300);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info .amharic {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            list-style: none;
+        }
+
+        .contact-details li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-details i {
+            font-size: 1.25rem;
+            color: var(--accent-light);
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            color: var(--neutral-800);
+        }
+
+        .contact-form h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-form .amharic {
+            color: var(--neutral-600);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--neutral-900);
+            color: var(--neutral-400);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--neutral-400);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-light);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--neutral-800);
+            padding-top: 2rem;
+            font-size: 0.875rem;
+        }
+
+        /* Thank You Page */
+        .thank-you-page {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--neutral-100);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .thank-you-page.active {
+            display: flex;
+        }
+
+        .thank-you-icon {
+            font-size: 5rem;
+            color: var(--success);
+            margin-bottom: 2rem;
+        }
+
+        .thank-you-page h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .thank-you-page .amharic {
+            font-size: 1.5rem;
+            color: var(--neutral-600);
+            margin-bottom: 2rem;
+        }
+
+        .thank-you-page p {
+            color: var(--neutral-600);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .back-home-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .back-home-btn:hover {
+            background: var(--primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Utility */
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-spine"></i>
+                Posture Pro
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home / መነሻ</a></li>
+                <li><a href="#pricing">Pricing / ዋጋ</a></li>
+                <li><a href="#order">Order / ትእዛዝ</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Stand Tall, Experience Confidence</h1>
+                <p class="amharic">ቁመናህን አስተካክል፣ በራስ መተማመንህን መልስ</p>
+                <p>Premium posture correctors designed for both men and women. Experience comfort and confidence with every step.</p>
+                <p class="amharic-text">ለወንዶች እና ለሴቶች የተዘጋጁ ደረጃቸውን የጠበቁ የቁመና ማስተካከያዎች። በእያንዳንዱ እርምጃ ምቾት እና የራስ መተማመንዎን ይላበሱ።</p>
+                <a href="#order" class="cta-button">
+                    Order Now / አሁን ይዘዙ
+                    <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                </a>
+            </div>
+            <div class="hero-image">
+                <img src="./images/heroimage.jpg" alt="Posture Corrector - Men and Women">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>Why Choose Posture Pro?</h2>
+                <p class="amharic">ፖስቸር ፕሮን ለምን መርጠው?</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-venus-mars"></i>
+                    <h3>Unisex Design</h3>
+                    <p class="amharic">ለሁለቱም ፆታ የሚሆን ዲዛይን</p>
+                    <p>Perfectly fits both men and women with adjustable straps for all body types.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-feather-alt"></i>
+                    <h3>Lightweight & Comfortable</h3>
+                    <p class="amharic">ቀላል እና ምቹ</p>
+                    <p>Breathable material that you can wear all day without discomfort.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-eye-slash"></i>
+                    <h3>Invisible Under Clothes</h3>
+                    <p class="amharic">ከልብሶች በታች የማይታይ</p>
+                    <p>Slim design that stays hidden under any outfit.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-hand-holding-medical"></i>
+                    <h3>Pain Relief</h3>
+                    <p class="amharic">የጀርባ ፣ የአንገት እና የትክሻ መጉበጥን የሚያጠፋ እና ህመምን የሚቀንስ</p>
+                    <p>Reduces back, neck, and shoulder pain from poor posture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery -->
+    <section class="gallery" id="gallery">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>Product Gallery</h2>
+                <p class="amharic">የምርት ጋለሪ</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="./images/001.webp" alt="Premium Posture Corrector Back View">
+                    <div class="gallery-overlay">
+                        <h4>Premium Back Support</h4>
+                        <p class="amharic">ፕሪሚየም የጀርባ ድጋፍ</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./images/003.webp" alt="Posture Corrector Front and Back">
+                    <div class="gallery-overlay">
+                        <h4>Front & Back Design</h4>
+                        <p class="amharic">የፊት እና የኋላ ዲዛይን</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./images/NEW!/001.jpg" alt="Posture Corrector Packaging">
+                    <div class="gallery-overlay">
+                        <h4>Elegant Packaging</h4>
+                        <p class="amharic">አሪፍ ማሸጊያ</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./images/NEW!/002.jpg" alt="Before and After Results">
+                    <div class="gallery-overlay">
+                        <h4>Visible Results</h4>
+                        <p class="amharic">የሚታዩ ለውጦች</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./images/NEW!/003.jpg" alt="Posture Improvement">
+                    <div class="gallery-overlay">
+                        <h4>Instant Improvement</h4>
+                        <p class="amharic">ወዲያውኑ የሚታይ ለውጥ</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./images/wear.jpg" alt="Invisible Under Clothing">
+                    <div class="gallery-overlay">
+                        <h4>Wear Anywhere</h4>
+                        <p class="amharic">በማንኛውም ቦታ ያድርጉት</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>Special Pricing</h2>
+                <p class="amharic">ልዩ ዋጋ</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Single Pack</h3>
+                    <p class="amharic">የአንድ ጥቅል</p>
+                    <div class="price">3,500 Birr</div>
+                    <p class="price-detail">1 Posture Corrector</p>
+                    <ul class="price-features">
+                        <li>1 Posture Corrector / 1 ጀርባ አስተካካይ</li>
+                        <li>Free Size / ነፃ መጠን</li>
+                        <li>User Guide / የተጠቃሚ መመሪያ</li>
+                        <li>Free Delivery / ያሉበት ቦታ በነጻ እናደርሳለን</li>
+                    </ul>
+                    <button class="order-btn" onclick="selectPackage('single')">Select / ይምረጡ</button>
+                </div>
+
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Most Popular / በጣም ተወዳጅ</div>
+                    <h3>Double Pack</h3>
+                    <p class="amharic">የሁለት ጥቅል</p>
+                    <div class="price">6,500 Birr</div>
+                    <p class="price-detail">2 Posture Correctors (Save 500!)</p>
+                    <ul class="price-features">
+                        <li>2 Posture Correctors / 2 ጀርባ አስተካካዮች</li>
+                        <li>Free Size / ነፃ መጠን</li>
+                        <li>User Guides / የተጠቃሚ መመሪያዎች</li>
+                        <li>Free Delivery / ያሉበት ቦታ በነጻ እናደርሳለን</li>
+                    </ul>
+                    <button class="order-btn" onclick="selectPackage('double')">Select / ይምረጡ</button>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Family Pack</h3>
+                    <p class="amharic">የቤተሰብ ጥቅል</p>
+                    <div class="price">9,000 Birr</div>
+                    <p class="price-detail">3 Posture Correctors (Save 1,500!)</p>
+                    <ul class="price-features">
+                        <li>3 Posture Correctors / 3 ጀርባ አስተካካዮች</li>
+                        <li>Free Size  / ነፃ መጠን</li>
+                        <li>User Guides / የተጠቃሚ መመሪያዎች</li>
+                        <li>Free Delivery / ያሉበት ቦታ በነጻ እናደርሳለን</li>
+                        <li>Gift Packaging / የስጦታ ጥቅል</li>
+                    </ul>
+                    <button class="order-btn" onclick="selectPackage('family')">Select / ይምረጡ</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>What Our Customers Say</h2>
+                <p class="amharic">ደንበኞቻችን ምን ይላሉ</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">DA</div>
+                        <div class="testimonial-info">
+                            <h4>Dawit A.</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "I noticed a huge difference in my posture within just one week. The corrector is comfortable and invisible under my work clothes."
+                        <span class="amharic">"በአንድ ሳምንት ውስጥ ታላቅ ለውጥ አይቻለሁ። አስተካካዩ ምቹ ነው እና ከስራ ልብሶቼ በታች የማይታይ ነው።"</span>
+                    </p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">HT</div>
+                        <div class="testimonial-info">
+                            <h4>Hiwot T.</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "As someone who sits at a desk all day, this has been a lifesaver. My back pain is significantly reduced and I feel more confident."
+                        <span class="amharic">"ሙሉ ቀን በጠረጴዛ ላይ እንደምቀመጥ ይህ ጀርባ አስተካካይ በእጅጉ ጠቅሞኛል፡፡ የጀርባ ህመሜ በጣም ቀንሷል እና ተጨማሪ የራስ መተማመኔን መልሶልኛል፡፡"</span>
+                    </p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">KM</div>
+                        <div class="testimonial-info">
+                            <h4>Kaleb M.</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "Bought the family pack for my wife and kids. Great quality, fast delivery in Addis Ababa, and excellent customer service."
+                        <span class="amharic">"ለሚስቴ እና ለልጆቼ የቤተሰብ ጥቅል ገዛሁ። ታላቅ ጥራት፣ አዲስ አበባ ባለሁበት በፍጥነት በነጻ አድርሰውልኛል ፣ እና ምርጥ የደንበኛ አገልግሎት።"</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section / Personal Dashboard -->
+    <section class="order-section" id="order">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>Place Your Order</h2>
+                <p class="amharic">ትእዛዝዎን ያስገቡ</p>
+            </div>
+            <div class="order-form-container">
+                <form id="orderForm" onsubmit="handleSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">Name</label>
+                            <span class="amharic-label">ስም</span>
+                            <input type="text" id="firstName" name="firstName" required placeholder="Enter your first name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <span class="amharic-label">ስልክ ቁጥር</span>
+                        <input type="tel" id="phone" name="phone" required placeholder="+251 91 234 5678">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <span class="amharic-label">ከተማ</span>
+                            <input type="text" id="city" name="city" required placeholder="e.g., Addis Ababa">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Delivery Address</label>
+                        <span class="amharic-label">የመላኪያ አድራሻ</span>
+                        <textarea id="address" name="address" rows="3" required placeholder="Enter your full address"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="package">Selected Package</label>
+                        <span class="amharic-label">የተመረጡትሽ ጥቅል</span>
+                        <select id="package" name="package" required>
+                            <option value="">Select a package / ጥቅል ይምረጡ</option>
+                            <option value="single">Single Pack - 3,500 Birr (1 Item)</option>
+                            <option value="double">Double Pack - 6,500 Birr (2 Items - Most Popular)</option>
+                            <option value="family">Family Pack - 9,000 Birr (3 Items - Best Value)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        Submit Order / ትእዛዙን ያስገቡ
+                        <i class="fas fa-paper-plane" style="margin-left: 0.5rem;"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                <p class="amharic">አግኙን</p>
+                <p style="margin-bottom: 2rem; opacity: 0.9;">Have questions? We're here to help. Reach out to us through any of the channels below.</p>
+                <p class="amharic" style="margin-bottom: 2rem; opacity: 0.8;">ጥያቄዎች አሉዎት? ለመርዳት እዚህ አለን። ከታች ካሉ መንገዶች ያግኙን።</p>
+
+                <ul class="contact-details">
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <strong>Phone / ስልክ</strong><br>
+                            <a href="https://wa.me/251944423304" target="_blank" style="color: white;">+251 94 442 3304</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email / ኢሜል</strong><br>
+                            info@posturepro.et
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Address / አድራሻ</strong><br>
+                            Bole Sub-City, Addis Ababa, Ethiopia
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Working Hours / የስራ ሰዓታት</strong><br>
+                            Mon - Sun: 8:00 AM - 8:00 PM <br>
+                            ሰኞ - እሁድ: 2:00 ጠዋት - 2:00 ምሽት
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-spine"></i> Posture Pro
+            </div>
+            <ul class="footer-links">
+                <li><a href="#home">Home / መነሻ</a></li>
+                <li><a href="#pricing">Pricing / ዋጋ</a></li>
+                <li><a href="#order">Order / ትእዛዝ</a></li>
+            </ul>
+            <div class="footer-bottom">
+                <p>© 2026 Posture Pro. All rights reserved. / © 2026 ፖስቸር ፕሮ። ሁሉም መብቶች የተጠበቁ ናቸው።</p>
+                <p style="margin-top: 0.5rem; opacity: 0.7;">Designed for better posture. / ለተሻለ ቁመና ተዘጋጅቷል።</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Thank You Page Overlay -->
+    <div class="thank-you-page" id="thankYouPage">
+        <div class="thank-you-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <h1>Thank you, you have submitted your application.</h1>
+        <p class="amharic">እናመሰኛለን፣ ትዕዛዞን ተቀብለናል።</p>
+        <p>We have received your order and will contact you shortly to confirm the details and arrange delivery.</p>
+        <p class="amharic" style="margin-bottom: 2rem;">ትእዛዝዎን ተቀብለናል ለማረጋገጥ ከ30 ደቂቃ በኋላ ከጥሪ ማዕከል ይደወልሎታል፡፡</p>
+        <a href="#home" class="back-home-btn" onclick="closeThankYou()">
+            <i class="fas fa-home" style="margin-right: 0.5rem;"></i>
+            Back to Home / ወደ መነሻ ይመለሱ
+        </a>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Select Package
+        function selectPackage(packageType) {
+            const select = document.getElementById('package');
+            select.value = packageType;
+            document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+
+            // Highlight the select
+            select.style.borderColor = '#3182ce';
+            setTimeout(() => {
+                select.style.borderColor = '#e2e8f0';
+            }, 2000);
+        }
+
+        // Handle Order Form Submit
+      function handleSubmit(event) {
+    event.preventDefault();
+
+    // 1. Get form data
+    const formData = new FormData(event.target);
+
+    // 2. Send data to PHP in the background (AJAX)
+    fetch('process.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(result => {
+        console.log('Server Response:', result);
+        
+        // 3. Show your existing thank you page
+        document.getElementById('thankYouPage').classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        // 4. Reset form
+        event.target.reset();
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Something went wrong. Please try again.');
+    });
+}
+
+        // Handle Contact Form Submit
+        function handleContactSubmit(event) {
+            event.preventDefault();
+
+            // Show thank you message
+            alert('Thank you for your message! We will get back to you soon.\n\nመልእክትዎን አመሰግናለሁ! በቅርቡ እናገኝዎታለን።');
+
+            // Reset form
+            event.target.reset();
+        }
+
+        // Close Thank You Page
+        function closeThankYou() {
+            document.getElementById('thankYouPage').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Gallery image click to enlarge (simple alert for demo)
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const title = this.querySelector('h4').textContent;
+                alert(`Viewing: ${title}\n\nIn a full implementation, this would open a lightbox gallery.`);
+            });
+        });
+    </script>
+</body>
+</html>
