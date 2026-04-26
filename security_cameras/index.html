@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureTech Ethiopia | IMOU & HIKVISION</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+Ethiopic&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#C41E3A', // Professional Crimson
+                            dark: '#1A1A1A',
+                            gray: '#F5F5F5'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans Ethiopic', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C41E3A;
+            border-radius: 4px;
+        }
+
+        /* Animations */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        /* Bilingual Text Styling */
+        .amharic-text {
+            font-family: 'Noto Sans Ethiopic', sans-serif;
+            color: #666;
+            font-size: 0.9em;
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* Hide/Show Logic */
+.hidden-section {
+    display: none !important;
+}
+
+.active-section {
+    display: flex !important;
+}
+
+nav {
+    display: block !important;
+}
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans antialiased">
+             <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-brand-red rounded-lg flex items-center justify-center text-white font-bold text-xl">S</div>
+                    <div>
+                        <h1 class="text-xl font-bold tracking-tight text-brand-dark">SECURETECH</h1>
+                        <p class="text-xs text-brand-red font-semibold tracking-wider">ETHIOPIA</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-brand-red font-medium transition">Home / <span class="text-sm text-gray-400">መነሻ</span></a>
+                    <a href="#products" class="text-gray-600 hover:text-brand-red font-medium transition">Products / <span class="text-sm text-gray-400">ምርቶች</span></a>
+                    <a href="#installations" class="text-gray-600 hover:text-brand-red font-medium transition">Installations / <span class="text-sm text-gray-400">ስራዎች</span></a>
+                    <a href="#orderForm" class="text-gray-600 hover:text-brand-red font-medium transition">Order / <span class="text-sm text-gray-400">ይዘዙ</span></a>
+                </div>
+                <button onclick="scrollToSection('order')" class="bg-brand-red text-white px-6 py-2 rounded-full font-medium hover:bg-red-700 transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                    Order Now / <span class="text-xs opacity-90">አሁን ይዘዙ</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div id="main-content">
+        
+        <!-- Hero Section -->
+        <section id="home" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Security Background" class="w-full h-full object-cover opacity-10">
+                <div class="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white"></div>
+            </div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto fade-in-up">
+                    <div class="inline-block bg-brand-red/10 text-brand-red px-4 py-1 rounded-full text-sm font-bold mb-6 tracking-wide uppercase">
+                        Authorized Dealer / <span class="amharic-text !inline !text-brand-red">የተረጋገጠ ወኪል</span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-bold text-brand-dark mb-6 leading-tight">
+                         የተሻለ የደህንነት መፍትሄዎች
+                        <span class="block text-brand-red mt-2">HIKVISION & IMOU</span>
+                    </h1>
+                    <div class="amharic-text !text-xl !text-gray-500 mb-8">
+                        Advanced Security Solutions - አይሞ እና ሂክቪዥን
+                    </div>
+                    <p class="text-xl text-gray-600 mb-4">
+                        Protecting what matters most with cutting-edge surveillance technology.
+                    </p>
+                    <p class="amharic-text !text-lg !text-gray-500 mb-10">
+                        በጣም የሚያስፈልጉ ንብረቶችን በዘመናዊ የደህንነት ቴክኖሎጂ መጠበቅ።
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <button onclick="scrollToSection('products')" class="bg-brand-dark text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition flex items-center justify-center gap-2">
+                            View Products <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button onclick="scrollToSection('installations')" class="bg-white border-2 border-brand-red text-brand-red px-8 py-4 rounded-lg font-semibold hover:bg-red-50 transition">
+                            Our Portfolio
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Installations / Portfolio Section -->
+        <section id="installations" class="py-20 bg-brand-gray">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-brand-dark mb-2">Professional Installations</h2>
+                    <p class="amharic-text !text-lg">የተሰሩ ፕሮጀክቶች</p>
+                    <div class="w-20 h-1 bg-brand-red mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1: Companies -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Office Building" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-brand-dark mb-1">Corporate Offices</h3>
+                            <p class="amharic-text">የኩባንያ ቢሮዎች</p>
+                            <p class="text-gray-600 mt-2 text-sm">Full-scale CCTV integration for business environments.</p>
+                        </div>
+                    </div>
+             <!-- Card 2: Warehouses -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://kimi-web-img.moonshot.cn/img/cdn.prod.website-files.com/1773ba5449d8fb5150a1f87e29b6d8d5b168d370.webp" alt="Warehouse Security" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-brand-dark mb-1">Warehouses</h3>
+                            <p class="amharic-text">መጋዘኖች</p>
+                            <p class="text-gray-600 mt-2 text-sm">24/7 monitoring for inventory protection.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Real Estate -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://kimi-web-img.moonshot.cn/img/www.cctvcameradelhi.in/646c0a822c44ff188ef3388d9fecf9b5f6418be2.jpg" alt="Real Estate" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-brand-dark mb-1">Real Estate</h3>
+                            <p class="amharic-text">የሪል እስቴት ቤቶች</p>
+                            <p class="text-gray-600 mt-2 text-sm">Secure residential complexes and living houses.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Living Houses -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="House" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-brand-dark mb-1">Private Residences</h3>
+                            <p class="amharic-text">የግል መኖሪያ ቤቶች</p>
+                            <p class="text-gray-600 mt-2 text-sm">Smart home security systems.</p>
+                        </div>
+                    </div>
+                 <!-- Card 5: Taxi Terminal (Special) -->
+                    <div class="bg-brand-dark rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 md:col-span-2 lg:col-span-2 relative">
+                        <div class="absolute inset-0">
+                            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Taxi Terminal" class="w-full h-full object-cover opacity-40">
+                        </div>
+                        <div class="relative p-8 h-full flex flex-col justify-center">
+                            <div class="bg-brand-red text-white text-xs font-bold px-3 py-1 rounded w-fit mb-4">FEATURED PROJECT</div>
+                            <h3 class="text-2xl font-bold text-white mb-1">Addis Ababa Transport Bureau</h3>
+                            <p class="text-gray-300 text-lg amharic-text !text-white/80">የአዲስ አበባ ትራንስፖርት ቢሮ</p>
+                            <p class="text-gray-200 mt-4 max-w-xl">
+                                We are proud to have installed and worked with the Addis Ababa Transport Bureau for all of their taxi terminals, ensuring public safety and operational efficiency.
+                            </p>
+                            <p class="text-gray-400 mt-2 text-sm amharic-text">
+                                ለአዲስ አበባ ትራንስፖርት ቢሮ ለሁሉም የታክሲ ተርሚናሎቻቸው የካሜራ ገጠማ ስራ ሰርተናል።
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products & Pricing Section -->
+        <section id="products" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-brand-dark mb-2">Our Product Range</h2>
+                    <p class="amharic-text !text-lg">የምርት ክልሎቻችን</p>
+                    <div class="w-20 h-1 bg-brand-red mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    
+                    <!-- Product 1: IMOU Cruiser -->
+                    <div class="border border-gray-200 rounded-2xl p-6 hover:border-brand-red transition group bg-white shadow-sm hover:shadow-xl">
+                        <div class="relative h-64 mb-6 bg-gray-50 rounded-xl overflow-hidden flex items-center justify-center">
+                            <img src="https://kimi-web-img.moonshot.cn/img/static-website.imou.com/87f240af74be879aa3a9eda48cd3a4d862070af8.jpg" alt="IMOU Cruiser" class="h-full object-contain group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-xl font-bold text-brand-dark">IMOU Cruiser</h3>
+                            <p class="amharic-text">አይሞ ክሩዘር</p>
+                            <p class="text-gray-500 text-sm mt-2 mb-4">Active Deterrence Wi-Fi Camera</p>
+                            
+                            <div class="bg-brand-gray rounded-lg p-4 mb-6">
+                                <span class="text-3xl font-bold text-brand-red">50,000</span>
+                                <span class="text-gray-600 font-medium"> ETB / ብር</span>
+                            </div>
+
+                            <ul class="text-left text-sm text-gray-600 space-y-2 mb-6 px-4">
+                                <li class="flex items-center"><i class="fas fa-check text-brand-red mr-2"></i> 360° Coverage</li>
+                                <li class="flex items-center"><i class="fas fa-check text-brand-red mr-2"></i> Color Night Vision</li>
+                                <li class="flex items-center"><i class="fas fa-check text-brand-red mr-2"></i> AI Human Detection</li>
+                            </ul>
+                            <button onclick="selectProduct('imou')" class="w-full border-2 border-brand-red text-brand-red font-bold py-3 rounded-lg hover:bg-brand-red hover:text-white transition">
+                                Select / ምረጥ
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 2: HIKVISION Varifocal -->
+                    <div class="border-2 border-brand-red rounded-2xl p-6 relative bg-white shadow-xl transform md:-translate-y-4">
+                        <div class="absolute top-0 right-0 bg-brand-red text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">POPULAR</div>
+                        <div class="relative h-64 mb-6 bg-gray-50 rounded-xl overflow-hidden flex items-center justify-center">
+                            <img src="https://kimi-web-img.moonshot.cn/img/info.hikvision.com/6fc32d41884c09d376029de7420c467d48f44b20.png" alt="HIKVISION Varifocal" class="h-full object-contain">
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-xl font-bold text-brand-dark">HIKVISION Varifocal AcuSense</h3>
+                            <p class="amharic-text">ሂክቪዥን ቫሪፎካል አኩሰንስ</p>
+                            <p class="text-gray-500 text-sm mt-2 mb-1">Up to 80 Meters Vision</p>
+                            <p class="amharic-text !text-xs">እስከ 80 ሜትር ርቀት ድረስ ማየት ይችላል</p>
+                            
+                            <div class="bg-brand-red/10 rounded-lg p-4 mb-6 mt-2">
+                                <span class="text-3xl font-bold text-brand-red">70,000</span>
+                                <span class="text-gray-600 font-medium"> ETB / ብር</span>
+                            </div>
+
+                            <ul class="text-left text-sm text-gray-600 space-y-2 mb-6 px-4">
+                                <li class="flex items-center"><i class="fas fa-check text-brand-red mr-2"></i> 80m IR Range</li>
+                                <li class="flex items-center"><i class="fas fa-check text-brand-red mr-2"></i> Motorized Zoom</li>
+                                <li class="flex items-center"><i class="fas fa-check text-brand-red mr-2"></i> AcuSense AI Tech</li>
+                            </ul>
+
+                            <button onclick="selectProduct('hikvision1')" class="w-full bg-brand-red text-white font-bold py-3 rounded-lg hover:bg-red-700 transition shadow-lg">
+                                Select / ምረጥ
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 3: HIKVISION PTZ -->
+                    <div class="border border-gray-200 rounded-2xl p-6 hover:border-brand-red transition group bg-white shadow-sm hover:shadow-xl">
+                        <div class="relative h-64 mb-6 bg-gray-50 rounded-xl overflow-hidden flex items-center justify-center">
+                            <img src="https://kimi-web-img.moonshot.cn/img/www.hikvision.com/a032f67400d9367f7c9531ef539be4392e3cf124.jpg" alt="HIKVISION PTZ" class="h-full object-contain">
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-xl font-bold text-brand-dark">HIKVISION PTZ Series</h3>
+                            <p class="amharic-text">ሂክቪዥን ፒቲዜድ ተከታታይ</p>
+                            <p class="text-gray-500 text-sm mt-2 mb-1">150m - 200m Long Range</p>
+                            <p class="amharic-text !text-xs">እስከ 150 እስከ 200 ሜትር ርቀት</p>
+                            
+                            <div class="bg-brand-gray rounded-lg p-4 mb-6 mt-2">
+                                <span class="text-3xl font-bold text-brand-red">180,000</span>
+                                <span class="text-gray-600 font-medium"> ETB / ብር</span>
+                            </div>
+                            <ul class="text-left text-sm text-gray-600 space-y-2 mb-6 px-4">
+                                <li class="flex items-center"><i class="fas fa-check text-brand-red mr-2"></i> 200m+ Night Vision</li>
+                                <li class="flex items-center"><i class="fas fa-check text-brand-red mr-2"></i> 360° Pan & Tilt</li>
+                                <li class="flex items-center"><i class="fas fa-check text-brand-red mr-2"></i> High Speed Tracking <br> (በፈጣን መንገድ ያለ የመኪና ታርጋ ማንበብ ይችላል)</li>
+                            </ul>
+
+                            <button class="w-full border-2 border-brand-red text-brand-red font-bold py-3 rounded-lg hover:bg-brand-red hover:text-white transition" onclick="selectProduct('hikvision2')">
+                                Select / ምረጥ
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-20 bg-brand-dark text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-2">Client Testimonials</h2>
+                    <p class="text-gray-400 amharic-text">የደንበኞች ምስክርነቶች</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white/10 p-8 rounded-xl backdrop-blur-sm">
+                        <div class="flex text-brand-red mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-lg italic mb-4">"SecureTech installed cameras in our warehouse. The clarity of the HIKVISION cameras is outstanding. Highly recommended."</p>
+                        <p class="text-sm text-gray-400 amharic-text">"በመጋዘናችን ውስጥ ካሜራዎችን ገጥመዋል። በጣም ጥሩ ነው።"</p>
+                        <div class="mt-4 font-bold">- Ato Getachew, Warehouse Manager</div>
+                    </div>
+                    <div class="bg-white/10 p-8 rounded-xl backdrop-blur-sm">
+                        <div class="flex text-brand-red mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-lg italic mb-4">"Professional team and excellent after-sales support. Our office security is now top-notch."</p>
+                        <p class="text-sm text-gray-400 amharic-text">"ሙያዊ ስነ ምግባር ያለው ቡድን እና ጥሩ ድጋፍ። የቢሮ ደህንነታችን አሁን አስተማማኝ ነው።"</p>
+                        <div class="mt-4 font-bold">- Sarah T., Operations Director</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+         <!-- Personal Information Dashboard (Order Form) -->
+        <section id="order" class="py-20 bg-white border-t border-gray-100">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-brand-dark">Order Dashboard</h2>
+                    <p class="amharic-text">የትዕዛዝ ዳሽቦርድ</p>
+                    <p class="text-gray-500 mt-2">Fill in your details to complete your purchase.</p>
+                    <p class="amharic-text !text-sm">ግዢዎን ለማጠናቀቅ ዝርዝሮችዎን ይሙሉ።</p>
+                </div>
+
+                <div class="bg-brand-gray p-8 rounded-2xl shadow-inner">
+                    <form id="orderForm" onsubmit="handleSubmit(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Full Name / ሙሉ ስም</label>
+                                <input type="text" name="firstName" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 outline-none transition" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number / ስልክ ቁጥር</label>
+                                <input type="tel" name="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 outline-none transition" required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">City / ከተማ</label>
+                            <input type="text" name="city" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 outline-none transition">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Delivery Address / አድራሻ</label>
+                            <textarea name="address" rows="2" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 outline-none transition" required></textarea>
+                        </div>
+
+                        <div>
+                        <label for="package" class="block text-sm font-medium text-gray-700 mb-1">Selected Package / የተመረጡት ካሜራ</label>
+                        <select id="package" name="package" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 outline-none transition" required>
+                            <option value="">Select Camera / የካሜራ ምርት ይምረጡ</option>
+                            <option value="imou">IMOU Cruiser - 50,000 Birr</option>
+                            <option value="hikvision1">HIKVISION Varifocal AcuSense - 70,000 Birr</option>
+                            <option value="hikvision2">HIKVISION PTZ Series - 180,000 Birr</option>
+                        </select>
+                    </div>
+
+                        <div class="pt-4">
+                            <button type="submit" class="w-full bg-brand-red text-white font-bold py-4 rounded-lg shadow-lg hover:bg-red-700 hover:shadow-xl transition transform active:scale-95">
+                                Complete Order / ትዕዛዙን ያጠናቅቁ
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+         <!-- Footer -->
+        <footer class="bg-brand-dark text-white py-12 border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h2 class="text-2xl font-bold">SECURETECH</h2>
+                    <p class="text-gray-400 text-sm">Authorized IMOU & HIKVISION Dealer in Ethiopia</p>
+                </div>
+                <div class="text-gray-400 text-sm text-center md:text-right">
+                    <p>© 2026 SecureTech Ethiopia. All rights reserved.</p>
+                    <p class="amharic-text !text-gray-500 mt-1">© 2026 ሴኩርቴክ ኢትዮጵያ። ሁሉም መብቶች የተጠበቁ ናቸው።</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-brand-gray">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+                    <div class="bg-brand-red p-10 text-white md:w-1/3 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4">Contact Us</h3>
+                            <p class="amharic-text !text-white/80 mb-8">አግኙን</p>
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-phone"></i>
+                                    <a href="https://wa.me/251944423304" target="_blank" style="color: white;">+251 94 442 3304</a>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>info@securetech.et</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Addis Ababa, Ethiopia</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-10">
+                            <p class="text-sm opacity-75">Follow us:</p>
+                            <div class="flex gap-4 mt-2">
+                                <a href="#" class="hover:text-gray-200"><i class="fab fa-facebook fa-lg"></i></a>
+                                <a href="#" class="hover:text-gray-200"><i class="fab fa-telegram fa-lg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Thank You Page (Hidden by default) -->
+    <div id="thank-you-page" class="hidden-section min-h-screen bg-brand-gray flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl p-10 max-w-lg w-full text-center border-t-8 border-brand-red">
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-check text-4xl text-green-500"></i>
+            </div>
+            <h1 class="text-3xl font-bold text-brand-dark mb-2">Thank You!</h1>
+            <p class="text-xl text-gray-600 mb-6">You have submitted your application.</p>
+            
+            <div class="bg-gray-50 p-6 rounded-xl mb-8 text-left">
+                <p class="amharic-text !text-lg !text-gray-700 text-center leading-relaxed">
+                    አመሰግናለሁ፣ ማመልከቻዎን አስገብተዋል።
+                </p>
+                <p class="text-sm text-gray-500 text-center mt-2">We will contact you shortly to confirm your order.</p>
+                <p class="amharic-text !text-sm text-center">በቅርቡ ለትዕዛዙ ማረጋገጫ እንደርስዎታለን።</p>
+            </div>
+
+            <button onclick="goHome()" class="bg-brand-dark text-white px-8 py-3 rounded-lg font-bold hover:bg-gray-800 transition">
+                Return to Home / ወደ መነሻ ገፅ ተመለስ
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Scroll to section helper
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Product Selection Logic
+        let selectedProduct = null;
+        let selectedPrice = null;
+
+ // Select Package
+        function selectProduct(packageType) {
+            const select = document.getElementById('package');
+            select.value = packageType;
+            document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+
+            // Highlight the select
+            select.style.borderColor = '#3182ce';
+            setTimeout(() => {
+                select.style.borderColor = '#e2e8f0';
+            }, 2000);
+        }
+
+        // Form Handling
+      function handleSubmit(event) {
+    event.preventDefault();
+
+    // 1. Get form data
+    const formData = new FormData(event.target);
+    
+    // Change button to processing state
+    const btn = event.target.querySelector('button');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = 'Processing... / በሂደት ላይ...';
+    btn.disabled = true;
+
+    // 2. Send data to PHP in the background (AJAX)
+    fetch('../process.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(result => {
+        console.log('Server Response:', result);
+        
+        // 3. Hide main content and navigation
+        const mainContent = document.getElementById('main-content');
+        const nav = document.querySelector('nav');
+        
+        if (mainContent) mainContent.style.display = 'none';
+        if (nav) nav.style.display = 'none';
+        
+        // 4. Show thank you page (using correct class)
+        const thankYou = document.getElementById('thank-you-page');
+        thankYou.classList.remove('hidden-section');  // Remove hidden
+        thankYou.classList.add('active-section');    // Add active (not just 'active')
+        thankYou.style.display = 'flex';              // Ensure it's visible
+        
+        // Optional: scroll to top
+        window.scrollTo(0, 0);
+        
+        // 5. Reset form
+        event.target.reset();
+        
+        // Reset button (though it won't be visible since form is hidden)
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Something went wrong. Please try again.');
+        
+        // Reset button on error
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+    });
+}
+function goHome() {
+    // Reset the form
+    const form = document.getElementById('orderForm');
+    if (form) {
+        form.reset();
+    }
+    
+    // Reset package select to default
+    const packageSelect = document.getElementById('package');
+    if (packageSelect) {
+        packageSelect.value = '';
+    }
+    
+    // Show main content and navigation
+    const mainContent = document.getElementById('main-content');
+    const nav = document.querySelector('nav');
+    
+    if (mainContent) mainContent.style.display = 'block';
+    if (nav) nav.style.display = 'flex';
+    
+    // Hide Thank You Page
+    const thankYou = document.getElementById('thank-you-page');
+    thankYou.classList.add('hidden-section');
+    thankYou.classList.remove('active-section');
+    thankYou.style.display = 'none';
+    
+    // Reset button state in the form
+    const btn = document.querySelector('#orderForm button');
+    if (btn) {
+        btn.innerHTML = 'Complete Order / ትዕዛዙን ያጠናቅቁ';
+        btn.disabled = false;
+    }
+    
+    // Re-enable body scroll if you disabled it
+    document.body.style.overflow = '';
+    
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+    </script>
+</body>
+</html>
