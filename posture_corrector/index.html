@@ -1208,7 +1208,7 @@
     const formData = new FormData(event.target);
 
     // 2. Send data to PHP in the background (AJAX)
-    fetch('process.php', {
+    fetch('../process.php', {
         method: 'POST',
         body: formData
     })
